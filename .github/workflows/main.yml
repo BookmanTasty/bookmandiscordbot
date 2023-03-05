@@ -34,6 +34,3 @@ jobs:
           context: .
           push: true
           tags: bookmantasty/bookmandiscordbot:${{github.ref_name}}
-        secrets:
-          DOCKERHUB_ACCESS_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-
