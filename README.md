@@ -37,7 +37,7 @@ To use the image, you will need to have Docker installed on your machine. You ca
 Once you have Docker installed, you can run the bot in a Docker container using the following command:
     
 ```bash
-docker run -d -e API_KEY=<your_api_key> -e SUMMONER_V4_URL=<your_summoner_v4_url> -e REGION_URL=<your_region_url> -e DATA_DRAGON_URL=<your_data_dragon_url> -e MATCH_ANALYSIS_COUNT=<match_analysis_count> -e DISCORD_API_KEY=<your_discord_api_key> -e DISCORD_TEXT_CHANNEL=<your_discord_text_channel> bookmantasty/bookmandiscordbot:v0.0.1
+docker run -d -e API_KEY=<your_api_key> -e SUMMONER_V4_URL=<your_summoner_v4_url> -e REGION_URL=<your_region_url> -e DATA_DRAGON_URL=<your_data_dragon_url> -e MATCH_ANALYSIS_COUNT=<match_analysis_count> -e DISCORD_API_KEY=<your_discord_api_key> -e DISCORD_TEXT_CHANNEL=<your_discord_text_channel> bookmantasty/bookmandiscordbot:v0.0.2
 ``` 
 Make sure to replace `<your_api_key>`, `<your_summoner_v4_url>`, `<your_region_url>`, `<your_data_dragon_url>`, `<match_analysis_count>`, and `<your_discord_api_key>` with your actual values.
 
