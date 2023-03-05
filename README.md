@@ -28,6 +28,36 @@ cp .env.example .env
 ```shell script
 ./mvnw compile quarkus:dev
 ```
+# Running the Bot in a Docker Container
+
+If you prefer to run the bot in a Docker container, you can use the official Docker image available on Docker Hub.
+
+To use the image, you will need to have Docker installed on your machine. You can download and install Docker from the [official website](https://www.docker.com/products/docker-desktop).
+
+Once you have Docker installed, you can run the bot in a Docker container using the following command:
+    
+```bash
+docker run -d -e API_KEY=<your_api_key> -e SUMMONER_V4_URL=<your_summoner_v4_url> -e REGION_URL=<your_region_url> -e DATA_DRAGON_URL=<your_data_dragon_url> -e MATCH_ANALYSIS_COUNT=<match_analysis_count> -e DISCORD_API_KEY=<your_discord_api_key> -e DISCORD_TEXT_CHANNEL=<your_discord_text_channel> bookmantasty/bookmandiscordbot:v0.0.1
+``` 
+Make sure to replace `<your_api_key>`, `<your_summoner_v4_url>`, `<your_region_url>`, `<your_data_dragon_url>`, `<match_analysis_count>`, and `<your_discord_api_key>` with your actual values.
+
+You can also customize the configuration by passing additional environment variables. Here are all the available environment variables and their default values:
+
+- `API_KEY`: `RGAPI-00000000-0000-0000-0000-000000000000`
+- `SUMMONER_V4_URL`: `https://la1.api.riotgames.com/`
+- `REGION_URL`: `https://americas.api.riotgames.com/`
+- `DATA_DRAGON_URL`: `https://ddragon.leagueoflegends.com/`
+- `MATCH_ANALYSIS_COUNT`: `10`
+- `DISCORD_API_KEY`: `DISCORD_API_KEY_NOT_SET`
+
+To use a custom value for any of these variables, simply pass the new value as an environment variable when running the container.
+
+You can find the official Docker image for this bot on [Docker Hub](https://hub.docker.com/r/bookmantasty/bookmandiscordbot).
+
+
+
+
+
 # Configuring API Keys and URLs
 
 To use this project, you will need to configure the following variables in your environment:
