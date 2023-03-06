@@ -31,6 +31,7 @@ import java.util.Map;
 public class SummonerServiceImpl implements SummonerService {
 
     private static final String GIT_HUB_URL = "https://github.com/BookmanTasty/bookmandiscordbot";
+    private static final String TEEMO = "Teemo";
     @Inject
     @ConfigProperty(name = "riot.api.key")
     String apiKey;
@@ -56,13 +57,18 @@ public class SummonerServiceImpl implements SummonerService {
         }
         LeagueEntryDTO perfil = summonerV4.getLeagueEntryBySummonerId(sumonerDTO.getId(), apiKey).get(0);
         ChampionMasteryDto championMasteryDto = summonerV4.getChampionMasteryBySummonerId(sumonerDTO.getId(), "1", apiKey).get(0);
-        String bestChampion = "Teemo";
+        String bestChampion = TEEMO;
         for (Map.Entry<String, ChampionDetail> champion : data.entrySet()) {
             if (champion.getValue().getKey().equals(String.valueOf(championMasteryDto.getChampionId()))) {
-                bestChampion = champion.getValue().getName();
+                bestChampion = champion.getValue().getId();
             }
         }
-        Response championImage = dataDragon.getChampionSplash(bestChampion);
+        Response championImage;
+        try {
+            championImage = dataDragon.getChampionSplash(bestChampion);
+        } catch (Exception e) {
+            championImage = dataDragon.getChampionSplash(TEEMO);
+        }
         ByteArrayInputStream championByteArray = new ByteArrayInputStream(championImage.readEntity(byte[].class));
         List<String> matchList = riotapiClient.getMatchListByPuuid(sumonerDTO.getPuuid(), "0", matchAnalisysCount, "ranked", apiKey);
         List<Participant> participantList = new ArrayList<>();
