@@ -1,5 +1,7 @@
 # Bookman Discord Bot
 
+![Bookman Discord Bot](img.png)
+
 Bookman Discord Bot is a powerful bot that collects information from the Riot API and returns a supercharged profile image with different data. With Bookman, you can show off your League of Legends stats and rank in style, all while hanging out with friends on Discord.
 
 Bookman's advanced features include the ability to analyze match history, display detailed stats for each champion played, and more. Plus, with support for multiple regions and languages, Bookman is perfect for players from all around the world.
